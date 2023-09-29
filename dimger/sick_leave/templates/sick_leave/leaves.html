@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Accounting for sick leave{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1 class="header-text">Accounting for sick leave</h1>
+        <div class="container">
+            {% if lists %}
+            {% for el in lists %}
+                <div class="alert alert-warning">
+                    <h3> {{ el.number_of_list }} </h3>
+                    <p> {{el.ache}} </p>
+                    <a href="{% url 'leave_det' el.id %}" class="btn btn-warning"> ALL INFO </a>
+                </div>
+                {% endfor %}
+
+            {% else %}
+                <p class="centerWrite"> Y're don't have notes </p>
+            {% endif %}</div>
+    </div>
+{% endblock %}
+
+

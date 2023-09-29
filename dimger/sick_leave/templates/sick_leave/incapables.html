@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Disabled persons {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1 class="header-text"> Accounting for jobs </h1>
+        <div class="container">
+            {% if lists1 %}
+            {% for el in lists1 %}
+                <div class="alert alert-warning">
+                    <h3> {{ el.id }} </h3>
+                    <h3>{{ el.lastName }}</h3>
+                    <a href="{% url 'incap_det' el.id %}" class="btn btn-warning"> ALL INFO </a>
+                </div>
+            {% endfor %}
+        {% else %}
+        <p class="centerWrite"> Y're don't have notes </p>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Form for adding sick leave{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Form for adding sick leave</h1>
+        <form method="post">
+            {% csrf_token %}<br>
+            {{ form.incapable }}<br><br>
+            {{form.number_of_list}}<br>
+            {{form.name_of_organization}}<br>
+            {{form.work}}<br>
+            {{form.ache}}<br>
+            {{form.begin_date}}<br>
+            {{form.end_date}}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-outline-success" type="submit">Append</button>
+        </form>
+    </div>
+{% endblock %}

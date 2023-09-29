@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}EDIT sick leave{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>EDIT sick leave</h1>
+        <form method="post">
+            {% csrf_token %}
+            <h4>Number of sick list: {{form.number_of_list}}</h4><br>
+            <h4>Name of med organization: {{form.name_of_organization}}</h4><br>
+            <h4>Job: {{form.work}}</h4><br>
+            <h4>Disease: {{form.ache}}</h4><br>
+            <h4>The begin sick leave: {{form.begin_date}}</h4><br>
+            <h4>The end sick leave: {{form.end_date}}</h4><br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">EDIT</button>
+        </form>
+    </div>
+{% endblock %}

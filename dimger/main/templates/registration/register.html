@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+{% block title %}
+Registration
+{% endblock %}
+<html>
+{% block content %}
+<body>
+<h1> Registration </h1>
+<div class="feature info">
+<form class="regForm" method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    <h4>User name:<br><input type="text" name="username" id="id_username"></h4><br>
+    <h4>Email:<br><input type="email" name="email" id="id_email"></h4><br>
+    <h4><label for="id_password">Password:</label>
+    <br><input type="password" name="password" id="id_password">
+    </h4><br>
+    <h4><label for="id_confirm_password">Confirm password:</label>
+    <br><input type="password" name="confirm_password" id="id_confirm_password"></h4>
+    <br>
+    <input type="submit" value="Registrate">
+  </form>
+</div>
+</body>
+{% endblock %}
+</html>

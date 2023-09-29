@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% block title %}
+Log in
+{% endblock %}
+{% block content %}
+  <h1>LOG IN</h1>
+<div class="feature info">
+  <form class="logForm" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <h4>User name:<br> <input type="text" name="username" id="username"><br></h4>
+    <h4>Password:<br> <input type="password" name="password" id="password"><br></h4>
+    <h4><input type="submit" value="Log in"></h4>
+  </form>
+</div>
+{% endblock %}

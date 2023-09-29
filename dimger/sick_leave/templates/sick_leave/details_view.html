@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div class="features info">
+        <h2>{{ key_table.incapable }}</h2><br><br>
+        <h4>Number of sick list: {{ key_table.number_of_list }} </h4><br>
+        <h4>Name of med organization: {{ key_table.name_of_organization }}</h4><br>
+        <h4>Job: {{ key_table.work }}</h4><br>
+        <h4>Disease: {{ key_table.ache }}</h4><br>
+        <h4>The begin sick leave: {{ key_table.begin_date }}</h4><br>
+        <h4>The end sick leave: {{ key_table.end_date }}</h4><br>
+        <a href="{% url 'leave_delete' key_table.pk %}" class ="btn btn-danger"> Delete note </a>
+        <a href="{% url 'leave_update' key_table.pk %}" class ="btn btn-info"> Edit note </a>
+    </div>
+{% endblock %}

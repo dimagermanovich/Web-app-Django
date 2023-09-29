@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Form for adding persons {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Form for adding persons</h1>
+        <form method="post">
+            {% csrf_token %}<br>
+            {{form.lastName}}<br>
+            {{form.firstName}}<br>
+            {{form.patronymic}}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-outline-success" type="submit">Append</button>
+        </form>
+    </div>
+{% endblock %}

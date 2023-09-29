@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}EDIT employee{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>EDIT info about Employee</h1>
+        <form method="post">
+            {% csrf_token %}
+            <h4>Last Name: {{ form.lastName }}</h4><br><br>
+            <h4>First Name: {{ form.firstName }}</h4><br><br>
+            <h4>Patronymic: {{ form.patronymic }}</h4><br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">EDIT</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div class="features info">
+        <h2>{{ incapable_table.id }}</h2><br><br>
+        <h4>Last Name: {{ incapable_table.lastName }} </h4><br>
+        <h4>First Name: {{ incapable_table.firstName }} </h4><br>
+        <h4>Patronymic: {{ incapable_table.patronymic }} </h4><br>
+        <a href="{% url 'incapable_delete' incapable_table.id %}" class ="btn btn-danger"> Delete note </a>
+        <a href="{% url 'incapable_update' incapable_table.id %}" class ="btn btn-info"> Edit note </a>
+        <a href="{% url 'func' incapable_table.id %}" class ="btn btn-warning"> See deseases </a>
+    </div>
+{% endblock %}

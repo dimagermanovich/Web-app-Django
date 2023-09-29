@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} List of diseases {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1 class="header-text">List of diseases</h1>
+        <div class="container">
+            {% if list1 %}
+            {% for i in list1 %}
+                <div class="alert alert-warning">
+                    <h3> {{ i }} </h3>
+                </div>
+                {% endfor %}
+
+            {% else %}
+                <p class="centerWrite"> Don't have notes </p>
+            {% endif %}</div>
+    </div>
+{% endblock %}
